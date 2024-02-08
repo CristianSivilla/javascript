@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Párrafos</title>
+</head>
+<body>
+    <p id="Parrafo">parrafo</p>
+    <button onclick="Negr()">Negrita</button>
+    <button onclick="Cur()">Cursiva</button>
+    <button onclick="Mayus()">Mayúsculas</button>
+</body>
+</html>
+
+<script type="text/javascript">
+    function Negr() {
+        let parrafo = document.getElementById("Parrafo");
+        parrafo.style.fontWeight = "bold";
+    }
+
+    function Cur() {
+        let parrafo = document.getElementById("Parrafo");
+        parrafo.style.fontStyle = "italic";
+    }
+
+    function Mayus() {
+        let parrafo = document.getElementById("Parrafo");
+        parrafo.textContent = parrafo.textContent.toUpperCase();
+    }
+
+</script>

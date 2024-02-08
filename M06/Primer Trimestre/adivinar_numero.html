@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+</head>
+<body>
+    <h2>Adivina el número del 1 al 100</h2>
+
+    <p>Ingresa un número:</p>
+    <input type="number" id="userGuess" min="1" max="100">
+    <button onclick="checkGuess()">Adivinar</button>
+
+    <p id="feedback"></p>
+    <p id="attempts">Intentos restantes: 10</p>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 10;
+
+        function checkGuess() {
+            if (attempts <= 0) {
+                document.getElementById("feedback").innerText = "¡Se acabaron los intentos! El número era " + randomNumber;
+                return;
+            }
+
+            let userGuess = Number(document.getElementById("userGuess").value);
+
+            if (userGuess === randomNumber) {
+                document.getElementById("feedback").innerText = "¡Correcto! El número es " + randomNumber;
+            } else if (userGuess < randomNumber) {
+                document.getElementById("feedback").innerText = "El número es mayor.";
+            } else {
+                document.getElementById("feedback").innerText = "El número es menor.";
+            }
+
+            attempts--;
+            document.getElementById("attempts").innerText = "Intentos restantes: " + attempts;
+
+            if (attempts == 0) {
+                document.getElementById("feedback").innerText += " ¡Se acabaron los intentos! El número era " + randomNumber;
+            }
+        }
+    </script>
+</body>
+</html>

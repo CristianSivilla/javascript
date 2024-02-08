@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz Node Cristian Sivillà</title>
+</head>
+<body>
+
+<script>
+    // Crea un nodo de tipo Element con nodeName 'DIV' y guarda su referencia en
+    // una variable llamada 'contenedor'
+    const contenedor = document.createElement('DIV');
+    
+    // Crea tres nodos de tipo Text con el siguiente contenido:
+    // ○ "Texto 1"
+    // ○ "Texto 2"
+    // ○ "Texto 3"
+    // ○ Guarda las referencias en las variables 'texto1', 'texto2' y 'texto3',
+    // respectivamente.
+    const texto1 = document.createTextNode('Texto 1');
+    const texto2 = document.createTextNode('Texto 2');
+    const texto3 = document.createTextNode('Texto 3');
+    
+    // Crea dos nodos de tipo Element con nodeName 'P' y guarda sus referencias
+    // en las variables 'parrafo1' y 'parrafo2'.
+    const parrafo1 = document.createElement('P');
+    const parrafo2 = document.createElement('P');
+    
+    // Utiliza 'appendChild' para agregar 'texto1' y 'texto2' a 'parrafo1', y 'texto3' a
+    // 'parrafo2'.
+    parrafo1.appendChild(texto1);
+    parrafo1.appendChild(texto2);
+    parrafo2.appendChild(texto3);
+    
+    // Utiliza 'appendChild' para agregar 'parrafo1' y 'parrafo2' al nodo 'contenedor'.
+    // Luego agregar el contenedor al body usando 'document.body'
+    contenedor.appendChild(parrafo1);
+    contenedor.appendChild(parrafo2);
+    
+    // Utiliza 'insertBefore' para agregar un nuevo nodo de tipo Element con
+    // nodeName 'H2' y texto "Encabezado" antes de 'parrafo1' en el nodo
+    // 'contenedor'.
+    let nuevoEncabezado = document.createElement('h2');
+    nuevoEncabezado.textContent = 'Encabezado';
+    contenedor.insertBefore(nuevoEncabezado, parrafo1);
+    
+    // Utiliza 'removeChild' para eliminar 'texto1' de 'parrafo1'.
+    parrafo1.removeChild(texto1);
+    
+    // Utiliza 'replaceChild' para reemplazar 'texto2' en 'parrafo1' por un nuevo nodo
+    // de tipo Text con el contenido "Texto reemplazado".
+    let textoReemplazado = document.createTextNode('nuevo texto');
+    parrafo1.replaceChild(textoReemplazado, texto2);
+    
+    // Utiliza 'cloneNode' para clonar 'parrafo2' (incluyendo sus hijos) y guarda la
+    // referencia en la variable 'parrafoClonado'
+    var parrafoClonado = parrafo2.cloneNode(true);
+    
+    // Utiliza 'appendChild' para agregar 'parrafoClonado' al nodo 'contenedor'.
+    contenedor.appendChild(parrafoClonado);
+    
+    // Imprime en la consola las propiedades 'nodeType', 'nodeName' y 'textContent'
+    // de cada nodo en 'contenedor' usando un bucle.
+    contenedor.childNodes.forEach(nodo => {
+        console.log('NodeType:', nodo.nodeType);
+        console.log('NodeName:', nodo.nodeName);
+        console.log('TextContent:', nodo.textContent);
+    });
+    
+    // Imprime en la consola si 'contenedor' tiene hijos usando 'hasChildNodes'
+    console.log('¿El contenedor tiene hijos?', contenedor.hasChildNodes());
+    
+    // Imprime en la consola el 'parentNode' de 'parrafo1', así como su 'firstChild' y
+    // 'lastChild'.
+    console.log('ParentNode de parrafo1:', parrafo1.parentNode);
+    console.log('FirstChild de parrafo1:', parrafo1.firstChild);
+    console.log('LastChild de parrafo1:', parrafo1.lastChild);
+    
+    // Imprime en la consola todos los 'childNodes' de 'contenedor' utilizando un
+    // bucle.
+    console.log('ChildNodes de contenedor:');
+    contenedor.childNodes.forEach(child => {
+        console.log(child);
+    });
+
+</script>
+
+</body>
+</html>

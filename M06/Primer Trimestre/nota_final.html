@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Final</title>
+</head>
+<body style="text-align: center;">
+    
+    <input type ="text" name = "nota" id = "nota">
+    <input type ="text" name = "porcentaje" id = "porcentaje">
+    <p>Resultados:</p>
+
+    <p id = "comentario"></p>
+
+    <button onclick="calcular()">Dale</button>
+</body>
+</html>
+
+<script>
+const calcular = function(){
+    let nota = Number(document.getElementById('nota').value);
+    let porcentaje = Number(document.getElementById('porcentaje').value);
+    let comentario = document.getElementById('comentario');
+    let notaTotal;
+
+    if (!notaTotal)
+    {
+        notaTotal = 0;
+    }
+    
+    if(!calcular.comentario){
+        calcular.nota = 0;
+        calcular.porcentaje = 0;
+        calcular.comentario = " ";
+        calcular.notaTotal = 0;
+    }
+
+     calcular.nota += nota;
+     calcular.porcentaje += porcentaje ;
+     calcular.comentario += calcular;
+     calcular.notaTotal += notaTotal;
+
+    calcular.notaTotal += (nota * porcentaje / 100);
+    let resultado = (calcular.notaTotal / calcular.porcentaje) * 100;
+    comentario.innerHTML += ` ${calcular.nota} * ${calcular.porcentaje}% = ${resultado}<br>`;
+
+}
+
+</script>

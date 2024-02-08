@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj de Arena</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <input type="number" id="numero" name="numero">
+        <button onclick="crear()">Dale</button>
+        <p id="reloj"></p>
+    </div>
+
+    <script>
+        const crear = function(){
+            let cadena = "* ";
+            const numero = Number(document.getElementById('numero').value);
+            const reloj = document.getElementById('reloj');
+            reloj.innerHTML = "";
+
+            for (let i = 0;  i < numero ; i++) {
+                const linea = cadena.repeat(numero - i);
+                reloj.innerHTML += linea + "<br>";
+            } 
+
+            for (let i = 2; i <= numero; i++) {
+                const linea = cadena.repeat(i);
+                reloj.innerHTML += linea + "<br>";
+            }
+        }
+
+    </script>
+</body>
+</html>

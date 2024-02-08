@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lista de Tareas</title>
+	<h1>Lista de Tareas</h1><br>
+  <p id="hora"></p>
+  <button onclick="agregar()">Agregar</button>  
+  <button onclick="eliminar()">Eliminar</button>
+  <button onclick="eliminartodos()">Eliminar Todos</button>
+  <input type="text" name = "text" id="valor"/>
+  <ol>
+  <li id="lista"></li>
+ </ol>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+  <script>
+
+    function actualizaReloj() {
+      let hora = document.getElementById('hora');
+      let ahora = new Date();
+      hora.textContent = "Hora  " + ahora.toLocaleTimeString();
+    }
+    setInterval(actualizaReloj, 1000); 
+
+  function agregar() {
+    let valor = document.getElementById('valor').value;
+    let lista = document.getElementById('lista');
+    let nuevoElemento = document.createElement('li');
+    nuevoElemento.textContent = valor;
+    lista.appendChild(nuevoElemento);
+  document.getElementById('valor').value = ""; 
+}
+  function eliminartodos() {
+    let lista = document.getElementById('lista');
+    lista.textContent = " "
+  }
+  
+  function eliminar() {
+  let lista = document.getElementById('lista');
+  let elementos = lista.getElementsByTagName('li');
+  
+  if (elementos.length > 0) {
+    lista.removeChild(elementos[elementos.length - 1]);
+  }
+}
+
+
+  </script>

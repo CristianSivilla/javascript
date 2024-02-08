@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Principal</title>
+</head>
+<body>
+
+<button onclick="openPopup()">Abrir PopUp</button>
+
+<script>
+    function openPopup() {
+        const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        const browser = navigator.userAgent;
+
+        const popup = window.open("", "Popup", "width=300,height=200");
+        popup.document.write("<h1>Información de la ventana anterior:</h1>");
+        popup.document.write("<p>Ancho: " + width + "px</p>");
+        popup.document.write("<p>Alto: " + height + "px</p>");
+        popup.document.write("<p>Navegador: " + browser + "</p>");
+    }
+</script>
+
+</body>
+</html>

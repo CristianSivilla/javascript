@@ -1,0 +1,44 @@
+<script>
+  let button = document.getElementById("myButton");
+  let input = document.getElementById("myInput");
+  //Agregue un evento que al pasar el cursor sobre el botón, este cambie al color lightblue
+  button.addEventListener("mouseover", function() {
+      button.style.backgroundColor = 'blue';
+  });
+  //Agregue un evento que al hacer click en el botón aparezca una alerta con el mensaje: "El botón se ha presionado!"
+  button.addEventListener("click", function() {
+      alert(`El boton se ha presionado`);
+  });
+  //Agregue un evento que al dejar de pasar el cursor sobre el botón, este cambie al color rosa
+  button.addEventListener("mouseout", function() {
+      button.style.backgroundColor = 'pink';
+  });
+  // Agregue un evento que al presionar una tecla aparezca por consola el mensaje de que fue presionada dicha tecla
+      input.addEventListener("keydown", function() {
+      alert(input.value)
+  });
+  // Agregue un evento que al ingresar el caracter '#', aparezca por consola el mensaje de que dicho caracter no esta permitido
+      input.addEventListener("keyup", function() {
+      if(input.value.includes('#')){
+          alert(`Caracter no válido`);
+          input.value = ''; 
+      }
+  });
+  // Agregue un evento que al liberar una tecla aparezca por consola el mensaje de que fue liberada dicha tecla
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Mouse and Keyboard Events</title>
+</head>
+<body>
+  <h1>JavaScript Mouse and Keyboard Events</h1>
+
+  <button id="myButton">Click Me</button>
+  <br>
+  <br>
+  <input type="text" id="myInput">
+
+</body>
+</html>

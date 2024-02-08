@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Trigonometrica</title>
+</head>
+<body>
+    <input type="text" name="valor" id="valor">
+
+    <button onclick="acirc()">Area Circulo</button>
+    <button onclick="lcirc()">Longitud Circulo</button>
+    <button onclick="acon()">Area Cono</button>
+    <button onclick="aesf()">Area Esfera</button>
+
+    <p id="resultado"></p>
+</body>
+</html>
+
+<script>
+    function acirc() {
+        let valor = document.getElementById("valor").value;
+        let aCirc = Math.PI * Math.pow(valor, 2);
+        document.getElementById("resultado").textContent = "El area del circulo es " + aCirc;
+    }
+
+    function lcirc() {
+        let valor = document.getElementById("valor").value;
+        let lCirc = 2 * Math.PI * valor;
+        document.getElementById("resultado").textContent = "La longitud del circulo es " + lCirc;
+    }
+
+	function acon() {
+    let valor = document.getElementById("valor").value;
+    let aCon = Math.PI * valor * (valor + Math.sqrt(Math.pow(valor, 2) + Math.pow(valor, 2)));
+    document.getElementById("resultado").textContent = "El area del cono es " + aCon;
+}
+
+    function aesf() {
+        let valor = document.getElementById("valor").value;
+        let aEsf = (4 * Math.PI * Math.pow(valor, 2)).toFixed(2);
+        document.getElementById("resultado").textContent = "El area de la esfera es " + aEsf;
+    }
+</script>
